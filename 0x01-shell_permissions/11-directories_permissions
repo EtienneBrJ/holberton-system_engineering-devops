@@ -1,3 +1,3 @@
 #!/bin/bash
-chmod 771 */
+chmod ugo+X */
 
