@@ -1,3 +1,3 @@
 SHELL
 ---
-This repository contains shell basics commands
+This repository contains projects on the shell.
