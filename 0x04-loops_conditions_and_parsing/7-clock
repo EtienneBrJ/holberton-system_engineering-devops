@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 hour=-1
-minute=0
 while (( hour++ < 12 ))
 do
+	minute=0
 	echo "Hour: $hour"
 	while (( minute++ < 59 ))
 	do
