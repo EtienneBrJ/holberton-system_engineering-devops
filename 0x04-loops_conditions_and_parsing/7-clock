@@ -1,26 +1,12 @@
 #!/usr/bin/env bash
-# Script that displays the time for 12 hours and 59 minutes
-iteH=1
-iteM=0
-hours=12
-minutes=59
-while ((iteM <= minutes))
+# This script is displaying "Holberton School" 10 times
+hour=-1
+minute=0
+while (( hour++ < 12 ))
 do
-    if ((iteM == 0))
-    then
-        echo 'Minute:' $iteM
-    else
-        echo $iteM
-    fi
-    ((iteM++))
-done
-while ((iteH <= hours))
-do
-    if ((iteH == 1))
-    then
-        echo 'Hour:' $iteH
-    else
-        echo $iteH
-    fi
-    ((iteH++))
+	echo "Hour: $hour"
+	while (( minute++ < 59 ))
+	do
+		echo "$minute"
+	done
 done
