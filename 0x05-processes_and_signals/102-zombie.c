@@ -14,6 +14,7 @@ int infinite_while(void)
     }
     return (0);
 }
+
 /**
  * main - create that create 5 zombies process
  * Return: 0 if success or 1 if it fail
