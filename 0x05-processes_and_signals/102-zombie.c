@@ -8,11 +8,11 @@
  */
 int infinite_while(void)
 {
-    while (1)
-    {
-        sleep(1);
-    }
-    return (0);
+	while (1)
+	{
+		sleep(1);
+	}
+	return (0);
 }
 
 /**
@@ -22,15 +22,15 @@ int infinite_while(void)
 
 int main(void)
 {
-    pid_t zpid;
-    int i;
+	pid_t zpid;
+	int i;
 
-    for (i = 0; i < 5; i++)
-    {
-        zpid = fork();
-        if (zpid == 0)
-            exit(EXIT_FAILURE);
-        printf("Zombie process created, PID: %d\n", zpid);
-    }
-    infinite_while();
+	for (i = 0; i < 5; i++)
+	{
+		zpid = fork();
+		if (zpid == 0)
+			exit(EXIT_FAILURE);
+		printf("Zombie process created, PID: %d\n", zpid);
+	}
+	infinite_while();
 }
