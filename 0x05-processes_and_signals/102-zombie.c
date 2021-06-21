@@ -27,7 +27,8 @@ int main(void)
 
     for (i = 0; i < 5; i++)
     {
-        if ((zpid = fork()) == 0)
+        zpid = fork();
+        if (zpid == 0)
             exit(EXIT_FAILURE);
         printf("Zombie process created, PID: %d\n", zpid);
     }
