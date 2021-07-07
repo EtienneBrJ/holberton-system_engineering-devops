@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-sudo netstat -lp
+# Displays listening ports that only shows linstening sockets
+# Shows the PID and name of the program to which ech socket belongs
+
+netstat -lp
