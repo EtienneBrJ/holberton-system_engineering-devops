@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # change localhost and facebook ip in /etc/hosts
 
 cp /etc/hosts ~/hosts.new
