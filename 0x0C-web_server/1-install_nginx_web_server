@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Create and start configuration of NginX server
+apt-get -y update
+apt-get -y install nginx
+ufw allow 80
+echo 'Holberton School' > /var/www/html/index.nginx-debian.html
+service nginx start
