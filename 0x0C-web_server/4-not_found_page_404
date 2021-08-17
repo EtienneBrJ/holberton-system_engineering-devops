@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Set up and configure an Nginx server so that /redirect_me is redirecting to another page
+# Create and add 404.html to the webserver
 
 apt-get -y update
 apt-get -y install nginx
@@ -8,4 +8,4 @@ echo 'Holberton School' > /var/www/html/index.nginx-debian.html
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sed -i '/listen \[::\]:80 default_server;/a \\n\trewrite ^/redirect_me / permanent;\n\terror_page 404 \/404.html;' /etc/nginx/sites-available/default
-service nginx start
+service nginx restart
