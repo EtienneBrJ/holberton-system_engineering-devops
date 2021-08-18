@@ -15,4 +15,5 @@ file_line { 'add redirect_me':
 
 package { 'nginx':
   hasrestart => true,
+  require => Package['nginx],
 }
