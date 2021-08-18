@@ -1,7 +1,6 @@
-# Installs Nginx server with redirect_me (oops)
-
-package {'nginx':
-  provider => present,
+# Installs Nginx server with redirect_me
+package { 'nginx':
+  ensure => installed,
 }
 
 file { '/var/www/html/index.html':
@@ -11,10 +10,9 @@ file { '/var/www/html/index.html':
 file_line { 'add redirect_me':
   path => '/etc/nginx/sites-available/default',
   after => 'listen 80 default server;',
-  line => 'rewrite ^/redirect_me https://github.com/EtienneBrJ permanent;,
+  line => 'rewrite ^/redirect_me https://github.com/EtienneBrJ permanent;',
 }
 
-exec { 'restart':
-  command => 'service nginx restart'
-  provider => 'shell',
+package { 'nginx':
+  hasrestart => true,
 }
