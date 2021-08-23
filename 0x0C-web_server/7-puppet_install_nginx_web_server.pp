@@ -1,26 +1,20 @@
 # Installs Nginx server with redirect_me
-exec { 'apt-get-update':
-  command => '/usr/bin/apt-get update',
-}
-
 package { 'nginx':
-  ensure  => installed,
-  require => Exec['apt-get-update'],
+  ensure => installed,
 }
 
 file { '/var/www/html/index.html':
-  content => 'Holberton School'
+  content => 'Holberton School',
 }
 
-file_line { 'config':
-  ensure  => 'present',
-  path    => '/etc/nginx/sites-available/default',
-  after   => 'listen 80 default server;',
-  line    => 'rewrite ^/redirect_me https://github.com/EtienneBrJ permanent;',
-  require => Package['nginx'],
+file_line { 'aaaaa':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-package { 'nginx':
+service { 'nginx':
   ensure  => running,
   require => Package['nginx'],
 }
