@@ -16,5 +16,5 @@ file_line { 'add redirect_me':
 
 package { 'nginx':
   ensure  => running,
-  require => Package['nginx],
+  require => Package['nginx'],
 }
