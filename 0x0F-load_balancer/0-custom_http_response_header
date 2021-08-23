@@ -7,5 +7,5 @@ ufw allow 80
 echo 'Holberton School' > /var/www/html/index.nginx-debian.html
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i "/listen \[::\]:80 default_server;/a \n\trewrite ^/redirect_me / permanent;\n\terror_page 404 \/404.html;\n\tadd_header X-Served-By $hostname;" /etc/nginx/sites-available/default
+sed -i "/listen \[::\]:80 default_server;/a \\n\trewrite ^/redirect_me / permanent;\n\terror_page 404 \/404.html;\n\tadd_header X-Served-By $hostname;" /etc/nginx/sites-available/default
 service nginx restart
