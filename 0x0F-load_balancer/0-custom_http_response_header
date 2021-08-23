@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Configure Nginx like the 2696-web-01 and add dynamically a custom HTTP header with the pair key: value
-apt-get -y update
+apt-get update
 apt-get -y install nginx
 ufw allow 80
 echo 'Holberton School' > /var/www/html/index.nginx-debian.html
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i "/listen \[::\]:80 default_server;/a \\n\trewrite ^/redirect_me / permanent;\n\terror_page 404 \/404.html;\n\tadd_header X-Served-By $(hostname);" /etc/nginx/sites-available/default
+sed -i "/listen \[::\]:80 default_server;/a \\\n\trewrite ^/redirect_me / permanent;\n\terror_page 404 \/404.html;\n\tadd_header X-Served-By $(hostname);" /etc/nginx/sites-available/default
 service nginx restart
