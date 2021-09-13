@@ -6,9 +6,8 @@ import csv
 from sys import argv
 
 
-employeeID = argv[1]
-
 if __name__ == "__main__":
+    employeeID = argv[1]
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(employeeID)).json().get('name')
     todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
