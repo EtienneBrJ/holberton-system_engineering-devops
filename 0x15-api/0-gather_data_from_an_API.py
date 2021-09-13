@@ -11,6 +11,10 @@ task_ndone = 0
 completed_tasks = []
 
 if __name__ == "__main__":
+    employeeID = argv[1]
+    task_done = 0
+    task_ndone = 0
+    completed_tasks = []
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(employeeID)).json().get('name')
     todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
