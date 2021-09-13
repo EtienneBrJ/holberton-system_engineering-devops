@@ -14,7 +14,7 @@ if __name__ == "__main__":
                         .format(employeeID)).json()
 
     with open("{}.csv".format(employeeID), "w", newline="") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, lineterminator='\n')
         [writer.writerow(
             [employeeID, username, task.get("completed"), task.get("title")]
          ) for task in todo]

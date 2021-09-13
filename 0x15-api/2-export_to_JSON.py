@@ -9,7 +9,7 @@ import sys
 if __name__ == "__main__":
     employeeID = sys.argv[1]
     username = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                            .format(employeeID)).json().get('name')
+                            .format(employeeID)).json().get('username')
     todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
                         .format(employeeID)).json()
 
