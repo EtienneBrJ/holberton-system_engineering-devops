@@ -16,15 +16,12 @@ if __name__ == "__main__":
     todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
                         .format(employeeID)).json()
 
-    for obj in todo:
-        if obj['completed']:
-            task_done += 1
-
-        else:
-            task_ndone += 1
+    for task in todo:
+        if task['completed']:
+            completed_tasks.append(task['title'])
 
     print("Employee {} is done with tasks({}/{}):".
-          format(username, task_done, task_ndone + task_done))
+          format(username, len(completed_tasks), len(todo)))
 
     for task in todo:
         if task['completed']:
