@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ Script that, using this REST API, for a given employee ID
     returns information about his/her TODO list progress."""
-import requests
-import sys
-
 
 if __name__ == "__main__":
+
+    import requests
+    import sys
+
     employeeID = sys.argv[1]
     task_done = 0
     task_ndone = 0
