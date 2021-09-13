@@ -12,10 +12,9 @@ if __name__ == "__main__":
     task_ndone = 0
     completed_tasks = []
     usernameR = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                            .format(employeeID))
+                             .format(employeeID))
     todoR = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
-                        .format(employeeID))
-
+                         .format(employeeID))
 
     username = json.loads(usernameR.text)
     todo = json.loads(todoR.text)
