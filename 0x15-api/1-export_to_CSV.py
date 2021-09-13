@@ -13,8 +13,8 @@ if __name__ == "__main__":
     todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
                         .format(employeeID)).json()
 
-    with open("{}.csv".format(employeeID), "w", newline="") as csvfil:
-        writer = csv.writer(csvfil, quoting=csv.QUOTE_ALL, lineterminator='\n')
+    with open("{}.csv".format(employeeID), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         [writer.writerow(
             [employeeID, username, task.get("completed"), task.get("title")]
          ) for task in todo]
