@@ -31,4 +31,4 @@ if __name__ == "__main__":
           format(username, task_done, task_ndone + task_done))
 
     print('\n'.join(["\t " + task.get('title') for task in todo.json()
-        if task.get('userId') == int(employeeID) and task.get('completed')]))
+          if task.get('userId') == int(employeeID) and task.get('completed')]))
